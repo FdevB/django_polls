@@ -2,7 +2,7 @@
 
 ## 📝 About the Project
 
-This is a **rewritten and customized version** of the famous *Polls* project from the [Django Official Documentation](https://docs.djangoproject.com/en/4.2/intro/tutorial01/).
+This is a **rewritten and customized version** of the famous *Polls* project from the [Django Official Documentation](https://docs.djangoproject.com/en/5.2/intro/tutorial01/).
 
 The main goals of this project:
 - Practicing core and intermediate Django concepts  
@@ -24,8 +24,11 @@ The main goals of this project:
 
 ## 🚀 How to Run
 
+Clone the repository, create a virtual environment, install requirements, set up the database, and run the server:
+
+```bash
 git clone <repo-link>
-cd django_polls
+cd journey_to_the_west
 
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
