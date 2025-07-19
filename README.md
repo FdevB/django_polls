@@ -28,7 +28,7 @@ Clone the repository, create a virtual environment, install requirements, set up
 
 ```bash
 git clone <repo-link>
-cd journey_to_the_west
+cd django_polls
 
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
