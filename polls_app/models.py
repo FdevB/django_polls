@@ -25,10 +25,10 @@ class QuestionModel(models.Model):
     question_text = models.CharField(max_length=250)
     
     STATUS_CHOICES = (
-        ('pub', 'published'),
-        ('dra', 'draft')
+        ('pub', 'Published'),
+        ('dra', 'Draft')
     )
-    status = models.CharField(max_length=3, choices=STATUS_CHOICES, default='draft')
+    status = models.CharField(max_length=3, choices=STATUS_CHOICES, default='dra')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -47,16 +47,19 @@ class QuestionModel(models.Model):
         Overrides the default save method to automatically set the slug field.
         """ 
 
-        self.slug = slugify(self.slug)
+        self.slug = slugify(self.question_text)
+
 
         if (self.status == 'published') and (self.published_at is None):
             self.published_at = timezone.now()
-        
+
         elif (self.published_at is not None) and (timezone.now() >= self.published_at):
             self.status = 'published'
 
         else:
             self.status = 'draft'
+
+        super().save(*args, **kwargs)
 
 
 class AnswerModel(models.Model):
