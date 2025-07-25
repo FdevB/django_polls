@@ -50,14 +50,14 @@ class QuestionModel(models.Model):
         self.slug = slugify(self.question_text)
 
 
-        if (self.status == 'published') and (self.published_at is None):
+        if (self.status == 'pub') and (self.published_at is None):
             self.published_at = timezone.now()
 
         elif (self.published_at is not None) and (timezone.now() >= self.published_at):
-            self.status = 'published'
+            self.status = 'pub'
 
         else:
-            self.status = 'draft'
+            self.status = 'dra'
 
         super().save(*args, **kwargs)
 
@@ -73,6 +73,7 @@ class AnswerModel(models.Model):
         question (ForeignKey to QuestionModel): Answer to this question.
         choice_text (CharField): Answer text.
         votes (IntegerField): Count of votes.
+        send_at (DateTimeField): Date when the post was sent.
     """
 
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='answer')
@@ -80,6 +81,8 @@ class AnswerModel(models.Model):
 
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+    
+    send_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Answer'
