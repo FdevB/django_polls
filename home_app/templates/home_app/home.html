@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home | django POLLS
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <h1 class="hero-title mt-0">Polls Project</h1>
+                <p class="hero-paragraph">This project is based on Django’s official tutorial (polls app), but I implemented it with my own style, customizations, and understanding for deeper learning.</p>
+                <div class="hero-cta">
+                    <a class="button button-primary" href="{% url 'polls:polls' %}">All polls</a>
+                    <a class="button" href="#">Log in</a>
+                    <a href="https://github.com/FdevB" style="width: 74%; margin-top: 18px; background-color: orange;" class="button">Developers</a>
+                </div>
+            </div>
+            <div class="hero-figure anime-element">
+                <svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
+                    <rect width="528" height="396" style="fill:transparent;" />
+                </svg>
+                <div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
+                <div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
+                <div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
+                <div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
+                <div class="hero-figure-box hero-figure-box-05"></div>
+                <div class="hero-figure-box hero-figure-box-06"></div>
+                <div class="hero-figure-box hero-figure-box-07"></div>
+                <div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
+                <div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
+                <div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

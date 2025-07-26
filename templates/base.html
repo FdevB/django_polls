@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    {% include 'include/head.html' %}
+    <title>{% block title %} {% endblock %}</title>
+
+</head>
+
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+
+        {% include 'include/header.html' %}
+
+        <main>
+
+            {% block content %}
+
+            {% endblock %}
+
+        </main>
+
+        {% include 'include/footer.html' %}
+        
+    </div>
+
+    {% include 'include/scripts.html' %}
+
+</body>
+
+</html>

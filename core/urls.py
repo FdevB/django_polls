@@ -22,4 +22,5 @@ urlpatterns = [
 
     # APPS urls
     path('polls/', include('polls_app.urls')),
+    path('', include('home_app.urls'))
 ]
